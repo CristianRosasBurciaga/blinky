@@ -5,7 +5,7 @@
 
 int main() {
     bn::core::init();
-    bn::backdrop::set_color(bn::color(20,20,31));
+    bn::backdrop::set_color(bn::color(10,32,10));
 
     while(true) {
         bn::core::update();
