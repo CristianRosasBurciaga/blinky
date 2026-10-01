@@ -35,7 +35,16 @@ int main() {
             green -= 1;
             bn::backdrop::set_color(bn::color(red,green,blue));
         }
-        
+    
+        //Conditions for the b value
+        if(bn::keypad::right_pressed()) {
+         blue += 1;
+        bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        if(bn::keypad::left_pressed()) {
+            green -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
 
         bn::core::update();
     }
