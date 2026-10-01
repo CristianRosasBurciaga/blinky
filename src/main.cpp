@@ -30,6 +30,20 @@ int main() {
             bn::backdrop::set_color(bn::color(red,green,blue));
         }
 
+        //If an rgb value goes above the maximum range, don't allow the value to change
+         if(bn::keypad::a_pressed() && red == 31) {
+            red -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        if(bn::keypad::r_pressed() && green == 31) {
+            green -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        if(bn::keypad::right_pressed() && blue == 31) {
+            blue -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+
         //Conditions for the r value
         if(bn::keypad::a_pressed()) {
          red += 1;
