@@ -42,7 +42,7 @@ int main() {
         bn::backdrop::set_color(bn::color(red,green,blue));
         }
         if(bn::keypad::left_pressed()) {
-            green -= 1;
+            blue -= 1;
             bn::backdrop::set_color(bn::color(red,green,blue));
         }
 
