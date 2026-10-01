@@ -16,14 +16,26 @@ int main() {
 
     while(true) {
 
+        //Conditions for the r value
         if(bn::keypad::a_pressed()) {
          red += 1;
         bn::backdrop::set_color(bn::color(red,green,blue));
-    }
-    if(bn::keypad::b_pressed()) {
-        red -= 1;
+        }
+        if(bn::keypad::b_pressed()) {
+            red -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+
+        //Conditions for the g value
+        if(bn::keypad::r_pressed()) {
+         green += 1;
         bn::backdrop::set_color(bn::color(red,green,blue));
-    }
+        }
+        if(bn::keypad::l_pressed()) {
+            green -= 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        
 
         bn::core::update();
     }
