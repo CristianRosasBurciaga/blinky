@@ -16,6 +16,19 @@ int main() {
 
     while(true) {
 
+        //If an rgb value goes under the minimum range, don't allow the value to change
+        if(bn::keypad::b_pressed() && red == 0) {
+            red += 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        if(bn::keypad::l_pressed() && green == 0) {
+            green += 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
+        if(bn::keypad::left_pressed() && blue == 0) {
+            blue += 1;
+            bn::backdrop::set_color(bn::color(red,green,blue));
+        }
 
         //Conditions for the r value
         if(bn::keypad::a_pressed()) {
@@ -44,20 +57,6 @@ int main() {
         }
         if(bn::keypad::left_pressed()) {
             blue -= 1;
-            bn::backdrop::set_color(bn::color(red,green,blue));
-        }
-
-        //If an rgb value goes under the minimum range, don't allow the value to change
-        if(bn::keypad::b_pressed() && red == 0) {
-            red += 1;
-            bn::backdrop::set_color(bn::color(red,green,blue));
-        }
-        if(bn::keypad::l_pressed() && green == 0) {
-            green += 1;
-            bn::backdrop::set_color(bn::color(red,green,blue));
-        }
-        if(bn::keypad::left_pressed() && blue == 0) {
-            blue += 1;
             bn::backdrop::set_color(bn::color(red,green,blue));
         }
 
